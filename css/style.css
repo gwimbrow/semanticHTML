@@ -1,0 +1,168 @@
+@import 'https://fonts.googleapis.com/css?family=Neuton:700';
+
+body {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  counter-reset: article;
+}
+
+h1, h2, h3, header:before {
+  font-family: 'Neutron', serif;
+  font-weight: 700;
+}
+
+h1 {
+  float: left;
+  margin: 0;
+  padding: 0.3em 0.5em;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5rem
+}
+
+body > header {
+  position: fixed;
+  width: 100%;
+}
+
+body > header nav {
+  float: right;
+}
+
+body > header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+body > header ul {
+  list-style: none;
+  padding: 0;
+  margin: 2em 0;
+}
+
+body > header li {
+  display: inline-block;
+  margin: 0 2em;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  color: #a5a5a5;
+  transition: all 0.15s linear;
+}
+
+body > header li:hover {
+  border-color: #a5a5a5;
+  color: #333;
+  cursor: pointer;
+}
+
+header h2, header h3 {
+  margin: 2.3em 0 0.5em;
+}
+
+header p {
+  margin: 0 0 1.8em;
+  font-style: italic;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  top: 6.6em;
+  bottom: 1.5em;
+  white-space: nowrap;
+  overflow-x: scroll;
+  background-color: #f1f1f1;
+  border-top: 0.3em solid #f1f1f1;
+}
+
+article {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+  min-width: 30em;
+  max-width: 50em;
+  white-space: normal;
+  padding: 0.8em 5em 5em;
+  background-color: #fff;
+  counter-increment: article;
+  counter-reset: section;
+}
+
+article > header + p:first-letter {
+  float: left;
+  font-size: 3em;
+  line-height: 0.8;
+  padding-right: 0.3em;
+}
+
+article header:before {
+  content: counter(article);
+  margin-left: -1.5em;
+  position: relative;
+  float: left;
+  font-size: 1.8em;
+}
+
+section header:before {
+  counter-increment: section;
+  content: counter(article) "." counter(section);
+  margin-left: -2em;
+  font-size: 1.5em;
+}
+
+section {
+  padding-left: 3em;
+}
+
+p+p {
+  text-indent: 1em;
+}
+
+ol {
+  padding-left: 1em;
+  list-style: none;
+  counter-reset: list;
+}
+
+ol li {
+  padding: 0.125em 0.5em;
+  counter-increment: list;
+}
+
+ol li:before {
+  content: counter(list);
+  margin-right: 0.5em;
+}
+
+ol li:nth-of-type(even) {
+  background-color: #e9e9e9;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 1.5em;
+  width: 100%;
+  color: #fff;
+  background-color: #333;
+  text-align: center;
+}
+
+footer > p {
+  margin: 0;
+  padding: 0.3em;
+  font-size: 0.8em;
+}
